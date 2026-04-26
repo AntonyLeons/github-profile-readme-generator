@@ -63,11 +63,8 @@ const socialIcons: Record<string, string> = {
   hackerearth: 'hackerearth.svg',
   geeks_for_geeks: 'geeks-for-geeks.svg',
   discord: 'discord.svg',
-  telegram: 'https://cdn.simpleicons.org/telegram/26A5E4',
+  telegram: 'telegram.svg',
 };
-
-const socialIconBaseUrl =
-  'https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/';
 
 // Generate skill icon URL - uses skillicons.dev for consistent dark mode support
 export function getSkillIconUrl(skill: string): string {
@@ -419,8 +416,7 @@ export function generateMarkdown(options: GenerateMarkdownOptions): string {
       const icon = socialIcons[platform];
       const url = socialPlatformUrls[platform];
       if (icon && url && username) {
-        const iconSrc = icon.startsWith('http') ? icon : `${socialIconBaseUrl}${icon}`;
-        markdown += `<a href="${url(username as string)}" target="blank"><img align="center" src="${iconSrc}" alt="${username as string}" height="30" width="40" /></a>\n`;
+        markdown += `<a href="${url(username as string)}" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/${icon}" alt="${username as string}" height="30" width="40" /></a>\n`;
       }
     });
 
